@@ -2,7 +2,7 @@
     margin: 0; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
-
+    --accentColor: rgb(255,87,72); 
 }
 
 body {
@@ -15,30 +15,35 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 80vw;
 }
 
 #input {
-    min-width: 50vw;
+    min-width: 55vw;
+    max-width: 55vw;
     height: 10vh;
+    min-height: 80px;
     background-color: rgb(180, 180, 180);
     border: none;        
     outline: none;       
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px; 
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px; 
     padding-left:15px;
     padding-top: 0;      
     padding-bottom: 0;
+    padding-right: 80px;
     font-size: 24px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1) inset;
 }
 
 #btnAdd{
     height: 10vh;
-    width: 20vw;
-    margin-left:-40px;
-    background-color: rgb(255,87,72);
+    min-height: 80px;
+    min-width: 25vw;
+    margin-left:-80px;
+    background-color: var(--accentColor);
     border: none; 
-    border-radius: 25px;
+    border-radius: 45px;
     font-size:24px ;
     color:white; 
 }
@@ -50,11 +55,59 @@ button{
 
 ul {
     list-style-type: none;
+    font-size: 24px;
+    padding-left: 0;
+}
+
+li{
+    display: flex; 
+    max-width: 80vw;
+    justify-content: space-between;
+    align-items: flex-start;  
+}
+
+    li span {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; 
+}
+   
+
+li span input[type="checkbox"]{
+      /* Browser-Stil entfernen */
+    -webkit-appearance: none;
+    appearance: none;
+    min-width: 34px; 
+    min-height: 34px;
+    border: 2px solid #888;
+    border-radius: 50%; /* macht sie rund */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--accentColor); 
+  border-color: var(--accentColor); 
+}
+
+/* Haken oder Punkt innen */
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  color: white;
+  font-size: 24px;
+  font-weight:bolder;
 }
 
 li button {
     background: transparent;
     border: none; 
+    font-size: 28px;
 }
 
 li button:hover {

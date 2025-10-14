@@ -27,8 +27,11 @@ addButton.addEventListener("click", ()=>  {
 
     const deleteButton = document.createElement("button"); 
     deleteButton.innerHTML = '<i class="fas fa-times"></i>'; // einfacher & zuverlässig
+
+    const textWrapper = document.createElement("span"); 
+    textWrapper.append(checkbox, document.createTextNode(input.value)); 
     
-    task.append(checkbox, document.createTextNode(input.value), deleteButton)
+    task.append(textWrapper, deleteButton); 
 
      //add li to task list 
     list.appendChild(task);
