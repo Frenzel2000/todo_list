@@ -53,7 +53,7 @@ function saveTasks() {
     addButton.addEventListener("click", () => {
       if (input.value.trim() === "") {
         tooltip.innerHTML = "Du musst erst eine Aufgabe eingeben!";
-        setTimeout(() => tooltip.innerHTML = "", 2000);
+        setTimeout(() => tooltip.innerHTML = "", 4000);
         return;
       }
       //set task values

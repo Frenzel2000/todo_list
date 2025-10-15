@@ -11,11 +11,24 @@ body {
     justify-content: center;  /* vertikal zentrieren */
     min-height: 100vh;        
 }
-.input-container {
+
+
+#tooltip{
+    display: flex; 
+    justify-content: center;
+    color: rgb(177, 0, 0); 
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+}
+
+
+#inputContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 80vw;
+    margin-top: 80px; 
 }
 
 #input {
