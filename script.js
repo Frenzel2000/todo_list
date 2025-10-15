@@ -40,6 +40,7 @@ function saveTasks() {
           task.style.textDecoration = t.done ? "line-through" : "none";
           //changed checkbox boolean save  
           saveTasks();
+          renderTasks(); 
         });
         // delete storage from deleted task
         deleteButton.addEventListener("click", () => {
@@ -48,6 +49,8 @@ function saveTasks() {
           renderTasks();
         });
       });
+
+      updateCounter(); 
     }
     // 🔹 add task by click 
     addButton.addEventListener("click", () => {
@@ -66,7 +69,24 @@ function saveTasks() {
       renderTasks();
     });
 
+    // friendlier for user input 
+    input.addEventListener("keypress", e =>{
+        if (e.key === "Enter") addButton.click(); 
+    }); 
+
+    const taskCounter = document.createElement("div")
+    taskCounter.id = "taskCounter"
+    list.after(taskCounter);
 
 
+
+    function updateCounter(){
+        const pending = tasks.filter(t => !t.done).length; 
+        taskCounter.textContent = `Du hast ${pending} offene Aufgabe${pending !== 1 ? "n" : ""}.`;    }
+
+
+    
+
+    
 //render Tasks by start 
 renderTasks(); 
